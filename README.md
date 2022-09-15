@@ -1,1 +1,2 @@
 # CabinBot
+I love gold

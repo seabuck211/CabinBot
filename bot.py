@@ -36,7 +36,7 @@ def run_discord_bot():
         # Debug printing
         print(f"{username} said: '{user_message}' ({channel})")
 
-        # User message containing '?' in front of the message becomes a private message
+        #  '?' prefix becomes a private message
         if user_message[0] == '?':
             user_message = user_message[1:]  # [1:] Removes '?'
             await send_message(message, user_message, is_private=True)
