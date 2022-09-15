@@ -24,7 +24,7 @@ def run_discord_bot():
 
     @client.event
     async def on_message(message):
-        # Make sure bot doesn't get stuck in an infinite loop
+        # Infinite loop fix
         if message.author == client.user:
             return
 
@@ -36,12 +36,12 @@ def run_discord_bot():
         # Debug printing
         print(f"{username} said: '{user_message}' ({channel})")
 
-        # If the user message contains a '?' in front of the text, it becomes a private message
+        # User message containing '?' in front of the message becomes a private message
         if user_message[0] == '?':
-            user_message = user_message[1:]  # [1:] Removes the '?'
+            user_message = user_message[1:]  # [1:] Removes '?'
             await send_message(message, user_message, is_private=True)
         else:
             await send_message(message, user_message, is_private=False)
 
-    # Remember to run your bot with your personal TOKEN
+    # Run bot
     client.run(os.getenv('TOKEN'))

@@ -12,4 +12,4 @@ def handle_response(message) -> str:
     if p_message == '!help':
         return "`Dongers.`"
 
-    #  return 'Yeah, I don\'t know. Try typing "!help".'
+    #  return 'Try typing "!help".'
